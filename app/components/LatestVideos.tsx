@@ -1,0 +1,73 @@
+"use client"; 
+
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Youtube } from "lucide-react"
+
+const videos = [
+  {
+    id: "vV7-JWgdCmg",
+    title: "Essence of Learning Agentic AI in 2025",
+    thumbnail: "https://img.youtube.com/vi/vV7-JWgdCmg/maxresdefault.jpg",
+  },
+  {
+    id: "-oHJ0Qwsgpw",
+    title: "Generative AI vs Agentic AI",
+    thumbnail: "https://img.youtube.com/vi/-oHJ0Qwsgpw/maxresdefault.jpg",
+  },
+  {
+    id: "YpyK-2qXQ1Q",
+    title: "Deploy any Static Site in Just 5 Min",
+    thumbnail: "https://img.youtube.com/vi/YpyK-2qXQ1Q/maxresdefault.jpg",
+  },
+]
+
+export default function LatestVideos() {
+  return (
+    <section id="videos" className="py-16 bg-gradient-to-br from-purple-50 via-pink-50 to-red-50">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center mb-10 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
+          Latest Videos
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          {videos.map((video) => (
+            <Card
+              key={video.id}
+              className="overflow-hidden transition-all duration-300 hover:shadow-lg transform hover:-translate-y-2 bg-white bg-opacity-40 backdrop-filter backdrop-blur-lg"
+            >
+              <CardHeader className="p-0 aspect-video relative">
+                <img
+                  src={video.thumbnail || "/placeholder.svg"}
+                  alt={video.title}
+                  className="w-full h-full object-cover absolute inset-0"
+                />
+              </CardHeader>
+              <CardContent className="p-4">
+                <CardTitle className="text-lg font-semibold line-clamp-2">{video.title}</CardTitle>
+              </CardContent>
+              <CardFooter className="p-4 pt-0">
+                <Button
+                  variant="outline"
+                  className="w-full transition-all duration-300 hover:bg-gradient-to-r from-purple-600 to-pink-600 hover:text-white"
+                  onClick={() => window.open(`https://www.youtube.com/watch?v=${video.id}`, "_blank")}
+                >
+                  <Youtube className="mr-2 h-4 w-4" /> Watch Now
+                </Button>
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
+        <div className="flex justify-center">
+          <Button
+            size="lg"
+            className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 transition-all duration-300 transform hover:scale-105 px-8"
+            onClick={() => window.open("https://www.youtube.com/@skilled_guru/videos", "_blank")}
+          >
+            <Youtube className="mr-2 h-5 w-5" /> View All Videos
+          </Button>
+        </div>
+      </div>
+    </section>
+  )
+}
+
