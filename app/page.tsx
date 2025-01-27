@@ -5,6 +5,7 @@ import Features from "./components/Features"
 import CTA from "./components/CTA"
 import Footer from "./components/Footer"
 
+
 const LatestVideos = dynamic(() => import("./components/LatestVideos"), { ssr: false })
 const UpcomingFeatures = dynamic(() => import("./components/UpcomingFeatures"), { ssr: false })
 const Founder = dynamic(() => import("./components/Founder"), { ssr: false })
