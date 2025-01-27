@@ -34,7 +34,7 @@ export default function Header() {
             <img
               src="/favicon.ico"
               alt="Skilled GURU Logo"
-              className="w-16 h-16 md:w-20 md:h-15 rounded-full border-4 border-blue-400" // Responsive rounded logo
+              className="w-20 h-15 md:w-20 md:h-15 rounded-full border-4 border-blue-400" // Responsive rounded logo
             />
 
             <span>Skilled GURU</span>
