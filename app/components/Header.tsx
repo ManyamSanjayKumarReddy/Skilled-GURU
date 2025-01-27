@@ -29,9 +29,14 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <Link
             href="/"
-            className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600"
+            className="flex items-center space-x-2 text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600"
           >
-            Skilled GURU
+            <img
+              src="/favicon.ico"
+              alt="Skilled GURU Logo"
+              className="w-20 h-15 rounded-full border-4 border-blue-400" // Rounded logo
+            />
+            <span>Skilled GURU</span>
           </Link>
           <div className="hidden md:flex items-center space-x-6">
             <nav>
@@ -105,4 +110,3 @@ export default function Header() {
     </header>
   )
 }
-
