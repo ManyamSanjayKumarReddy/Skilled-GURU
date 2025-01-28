@@ -21,7 +21,7 @@ export default function Hero() {
     <section
       className="relative py-20 overflow-hidden"
       style={{
-        background: `radial-gradient(circle at ${gradientPosition.x}% ${gradientPosition.y}%, #a3c8e7, #d1c2e9, #f7d1e4)`, // Darker gradient colors
+        background: `radial-gradient(circle at ${gradientPosition.x}% ${gradientPosition.y}%, #a3c8e7, #d1c2e9, #f7d1e4)`,
       }}
       onMouseMove={handleMouseMove}
     >
@@ -37,7 +37,7 @@ export default function Hero() {
             size="lg"
             className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 z-20"
           >
-            Explore Our Content 
+            Explore Our Content <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
       </div>
@@ -45,3 +45,4 @@ export default function Hero() {
     </section>
   )
 }
+

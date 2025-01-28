@@ -2,6 +2,7 @@
 
 import { Github, Linkedin, Instagram } from "lucide-react"
 import { useState } from "react"
+import Image from "next/image"
 
 export default function Founder() {
   const [isHovered, setIsHovered] = useState(false)
@@ -45,10 +46,13 @@ export default function Founder() {
                   ${isHovered ? "scale-105 rotate-3" : ""}
                 `}
                 >
-                  <img
+                  <Image
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Sanju.jpg-14d3rJf0jwoh3zWkJfT9X9JDHCu6uv.jpeg"
                     alt="Manyam Sanjay Kumar Reddy"
+                    width={192}
+                    height={192}
                     className="w-full h-full object-cover"
+                    priority
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 opacity-0 group-hover:opacity-0 transition-opacity duration-30"></div>
                 </div>

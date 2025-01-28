@@ -1,8 +1,9 @@
-"use client"; 
+"use client"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Youtube } from "lucide-react"
+import Link from "next/link"
 
 const videos = [
   {
@@ -58,13 +59,14 @@ export default function LatestVideos() {
           ))}
         </div>
         <div className="flex justify-center">
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 transition-all duration-300 transform hover:scale-105 px-8"
-            onClick={() => window.open("https://www.youtube.com/@skilled_guru/videos", "_blank")}
-          >
-            <Youtube className="mr-2 h-5 w-5" /> View All Videos
-          </Button>
+          <Link href="/videos">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 px-8"
+            >
+              View All Videos
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

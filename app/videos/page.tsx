@@ -1,43 +1,64 @@
 import Header from "../components/Header"
 import Footer from "../components/Footer"
-import { Button } from "@/components/ui/button"
+import VideoPlayer from "../components/VideoPlayer"
 
 const videos = [
-  { id: 1, title: "Introduction to GPT-4", thumbnail: "/placeholder.svg?height=180&width=320" },
-  { id: 2, title: "The Future of Quantum Computing", thumbnail: "/placeholder.svg?height=180&width=320" },
-  { id: 3, title: "Blockchain Technology Explained", thumbnail: "/placeholder.svg?height=180&width=320" },
-  { id: 4, title: "Machine Learning Basics", thumbnail: "/placeholder.svg?height=180&width=320" },
-  { id: 5, title: "Cybersecurity in the Age of AI", thumbnail: "/placeholder.svg?height=180&width=320" },
-  { id: 6, title: "The Rise of Edge Computing", thumbnail: "/placeholder.svg?height=180&width=320" },
+  {
+    id: "1dCjSLKTPXs",
+    title: "Is Deepseek R1 better than ChatGPT o1?",
+    description: "A comparison between Deepseek R1 and ChatGPT o1 models.",
+  },
+  {
+    id: "jq-aCeVyQcw",
+    title: "Python Variables and Data Types",
+    description: "Learn about Python variables and data types in this comprehensive tutorial.",
+  },
+  {
+    id: "uhnp1jM1mrw",
+    title: "Exploring the Future of AI with Bappy",
+    description: "An insightful discussion on the future of AI technology with Bappy.",
+  },
+  {
+    id: "vV7-JWgdCmg",
+    title: "Essence of Learning Agentic AI in 2025",
+    description: "Learn about the future of AI and how to prepare for it.",
+  },
+  {
+    id: "-oHJ0Qwsgpw",
+    title: "Generative AI vs Agentic AI",
+    description: "Understand the key differences between Generative and Agentic AI.",
+  },
+  {
+    id: "YpyK-2qXQ1Q",
+    title: "Deploy any Static Site in Just 5 Min",
+    description: "Quick tutorial on deploying static websites efficiently.",
+  },
 ]
 
 export default function VideosPage() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
       <Header />
-      <main className="flex-grow">
-        <section className="py-20">
-          <div className="container mx-auto px-4">
-            <h1 className="text-4xl font-bold text-center mb-12">Skilled GURU Videos</h1>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {videos.map((video) => (
-                <div key={video.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-                  <img
-                    src={video.thumbnail || "/placeholder.svg"}
-                    alt={video.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-4">
-                    <h3 className="text-lg font-semibold mb-2">{video.title}</h3>
-                    <Button variant="outline" className="w-full">
-                      Watch Now
-                    </Button>
-                  </div>
+      <main className="flex-grow py-16">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+            All Videos
+          </h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {videos.map((video) => (
+              <div
+                key={video.id}
+                className="bg-white bg-opacity-40 backdrop-filter backdrop-blur-lg rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+              >
+                <VideoPlayer videoId={video.id} title={video.title} />
+                <div className="p-6">
+                  <h2 className="text-xl font-bold mb-2 line-clamp-2">{video.title}</h2>
+                  <p className="text-gray-600 mb-4 line-clamp-3">{video.description}</p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-        </section>
+        </div>
       </main>
       <Footer />
     </div>
