@@ -12,8 +12,8 @@ export default function Header() {
   const navItems = [
     { name: "Features", href: "/#features", isLive: true },
     { name: "Videos", href: "/videos", isLive: true },
+    { name: "Course", href: "/course", isLive: true },
     { name: "Mock Interviews", href: "/#mock-interviews", isLive: false },
-    { name: "AI Course", href: "/#course", isLive: false },
   ]
 
   return (

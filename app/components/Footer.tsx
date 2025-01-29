@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Instagram, Linkedin, Youtube, PhoneIcon as WhatsappIcon } from "lucide-react"
+import { Instagram, Linkedin, Youtube, PhoneIcon as WhatsappIcon, Mail } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -46,7 +46,7 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="text-lg font-semibold mb-4">Connect</h4>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 mb-4">
               <Link
                 href="https://www.instagram.com/_04_sanju__/"
                 target="_blank"
@@ -83,6 +83,12 @@ export default function Footer() {
                 <WhatsappIcon className="w-6 h-6" />
                 <span className="sr-only">WhatsApp Channel</span>
               </Link>
+            </div>
+            <div className="flex items-center text-gray-400">
+              <Mail className="w-5 h-5 mr-2" />
+              <a href="mailto:skilledguruofficial@gmail.com" className="hover:text-white transition-colors">
+                skilledguruofficial@gmail.com
+              </a>
             </div>
           </div>
         </div>

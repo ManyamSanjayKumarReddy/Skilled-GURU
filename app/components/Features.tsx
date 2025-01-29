@@ -38,7 +38,7 @@ export default function Features() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white bg-opacity-40 backdrop-filter backdrop-blur-lg rounded-xl p-6 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2"
+              className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-xl p-6 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2 border border-white border-opacity-30"
             >
               <div
                 className={`rounded-full w-16 h-16 flex items-center justify-center mb-4 bg-gradient-to-r ${feature.gradient}`}

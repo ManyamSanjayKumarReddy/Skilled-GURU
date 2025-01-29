@@ -1,6 +1,9 @@
+"use client"
+
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import VideoPlayer from "../components/VideoPlayer"
+import AnnouncementBar from "../components/AnnouncementBar"
 
 const videos = [
   {
@@ -38,6 +41,7 @@ const videos = [
 export default function VideosPage() {
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+      <AnnouncementBar />
       <Header />
       <main className="flex-grow py-16">
         <div className="container mx-auto px-4">
