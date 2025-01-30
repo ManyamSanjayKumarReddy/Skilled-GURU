@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Link from "next/link"
 
 export default function Hero() {
@@ -10,7 +10,6 @@ export default function Hero() {
     x: 50,
     y: 50,
   })
-  const [isVisible, setIsVisible] = useState(false)
 
   const handleMouseMove = (e: React.MouseEvent) => {
     const { clientX, clientY } = e
@@ -18,10 +17,6 @@ export default function Hero() {
     const y = (clientY / window.innerHeight) * 100
     setGradientPosition({ x, y })
   }
-
-  useEffect(() => {
-    setIsVisible(true)
-  }, [])
 
   return (
     <section
@@ -40,20 +35,18 @@ export default function Hero() {
             Stay ahead in the rapidly evolving world of technology with our cutting-edge courses and resources
           </p>
           <div
-            className={`
+            className="
               bg-gradient-to-r from-blue-500 to-purple-500 
-              text-white p-4 rounded-lg shadow-lg 
-              transform transition-all duration-500 ease-in-out
-              hover:scale-105 hover:shadow-xl
-              ${isVisible ? "animate-bounce" : "opacity-0 translate-y-10"}
-            `}
-            style={{ animationDelay: "0.4s" }}
+              text-white p-6 rounded-lg shadow-lg 
+              transform transition-all duration-300
+              hover:shadow-xl
+            "
           >
             <p className="text-xl sm:text-2xl font-semibold mb-2">New Course: Mastering Agentic AI</p>
             <p className="text-base sm:text-lg mb-4">Build & Deploy Your Own AI Agents</p>
             <Button
               size="lg"
-              className="bg-white text-blue-600 hover:bg-blue-100 transition-all duration-300 transform hover:scale-105"
+              className="bg-white text-blue-600 hover:bg-blue-100 transition-colors duration-300"
               asChild
             >
               <Link href="/course">
