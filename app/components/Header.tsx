@@ -22,7 +22,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <Link
             href="/"
-            className="flex items-center space-x-2 text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600"
+            className="flex items-center space-x-2 text-xl sm:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600"
           >
             <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/skilled%20GURU.jpg-zmZ84qlwJx0uxn2ySKTzzfzQQSS1wq.jpeg"
@@ -31,7 +31,7 @@ export default function Header() {
               height={40}
               className="rounded-full"
             />
-            <span>Skilled GURU</span>
+            <span className="hidden sm:inline">Skilled GURU</span>
           </Link>
           <div className="hidden md:flex items-center space-x-6">
             <nav>

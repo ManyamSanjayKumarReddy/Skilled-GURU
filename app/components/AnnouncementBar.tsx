@@ -14,7 +14,7 @@ export default function AnnouncementBar() {
       <div className="container mx-auto flex items-center justify-center">
         <div className="text-center animate-pulse">
           <Link href="/course" className="text-lg font-bold hover:underline">
-            New AI Bootcamp: From Data Science to Autonomous Agents - Enroll Now!
+            New Course: Mastering Agentic AI – Build & Deploy Your Own AI Agents. Enroll Now!
           </Link>
         </div>
       </div>
