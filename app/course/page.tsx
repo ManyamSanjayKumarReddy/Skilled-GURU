@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { ChevronDown, ChevronRight, PhoneIcon, CheckCircle, Instagram, Linkedin, Github } from "lucide-react"
 import Image from "next/image"
 import AnnouncementBar from "../components/AnnouncementBar"
+import Pricing from "../components/Pricing"
 
 const courseSections = [
   {
@@ -290,6 +291,8 @@ export default function CoursePage() {
               </CardContent>
             </Card>
           </div>
+
+          <Pricing />
 
           <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-6 sm:mb-8 text-gray-800 animate-fadeInUp">
             Course Contents

@@ -1,4 +1,4 @@
-import { Video, Users, Brain, BotIcon as Robot } from "lucide-react"
+import { Video, Users, Brain, Code } from "lucide-react"
 
 const features = [
   {
@@ -8,22 +8,22 @@ const features = [
     gradient: "from-red-400 to-pink-400",
   },
   {
+    icon: Brain,
+    title: "Personalized Learning",
+    description: "Tailored learning paths to accelerate your tech career",
+    gradient: "from-green-400 to-teal-400",
+  },
+  {
     icon: Users,
     title: "Expert Community",
     description: "Connect with industry professionals and expand your network",
     gradient: "from-blue-400 to-cyan-400",
   },
   {
-    icon: Brain,
-    title: "Cutting-edge Content",
-    description: "Access the latest insights in AI and emerging technologies",
+    icon: Code,
+    title: "AI Web and App Services",
+    description: "High-quality AI-powered web and app development services within no time",
     gradient: "from-purple-400 to-indigo-400",
-  },
-  {
-    icon: Robot,
-    title: "Personalized Learning",
-    description: "Tailored learning paths to accelerate your tech career",
-    gradient: "from-green-400 to-teal-400",
   },
 ]
 
@@ -38,7 +38,7 @@ export default function Features() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-xl p-6 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2 border border-white border-opacity-30"
+              className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-xl p-6 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2 border border-white border-opacity-30 flex flex-col items-center text-center"
             >
               <div
                 className={`rounded-full w-16 h-16 flex items-center justify-center mb-4 bg-gradient-to-r ${feature.gradient}`}

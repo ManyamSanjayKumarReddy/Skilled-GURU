@@ -1,15 +1,10 @@
-import { Users, Box, BookOpen, MessageSquare } from "lucide-react"
+import { Users, BookOpen, MessageSquare, Briefcase } from "lucide-react"
 
 const features = [
   {
     icon: Users,
     title: "Mock Interviews",
     description: "Practice with domain-specific mock interviews to boost your career",
-  },
-  {
-    icon: Box,
-    title: "Dragger",
-    description: "Our upcoming SaaS product designed to revolutionize your workflow",
   },
   {
     icon: BookOpen,
@@ -21,6 +16,11 @@ const features = [
     icon: MessageSquare,
     title: "Career Guidance Chatbot",
     description: "Get personalized career advice with our AI-powered chatbot",
+  },
+  {
+    icon: Briefcase,
+    title: "AI-Powered Placement Training Platform",
+    description: "Enhance your skills and increase your chances of landing your dream job",
   },
 ]
 
@@ -56,7 +56,6 @@ export default function UpcomingFeatures() {
               </div>
             ))}
           </div>
-          {/* Dashed grid effect */}
           <div className="absolute inset-6 md:inset-8 lg:inset-10 grid grid-cols-1 sm:grid-cols-2 pointer-events-none">
             <div className="border-b sm:border-r border-gray-400 border-dashed"></div>
             <div className="border-b border-gray-400 border-dashed hidden sm:block"></div>
