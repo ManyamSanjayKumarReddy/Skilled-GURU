@@ -2,12 +2,14 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Youtube, Menu, X } from "lucide-react"
 import Image from "next/image"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   const navItems = [
     { name: "Features", href: "/#features", isLive: true },
@@ -42,7 +44,7 @@ export default function Header() {
                       href={item.href}
                       className={`text-gray-600 hover:text-blue-600 transition-colors ${
                         !item.isLive ? "opacity-70 cursor-not-allowed" : ""
-                      }`}
+                      } ${pathname === item.href ? "font-bold text-blue-600" : ""}`}
                       aria-label={item.isLive ? item.name : `${item.name} (Coming Soon)`}
                     >
                       {item.name}
@@ -78,7 +80,7 @@ export default function Header() {
                     href={item.href}
                     className={`text-gray-600 hover:text-blue-600 transition-colors ${
                       !item.isLive ? "opacity-70 cursor-not-allowed" : ""
-                    }`}
+                    } ${pathname === item.href ? "font-bold text-blue-600" : ""}`}
                     aria-label={item.isLive ? item.name : `${item.name} (Coming Soon)`}
                     onClick={() => setIsMenuOpen(false)}
                   >

@@ -1,85 +1,89 @@
-import { Check } from "lucide-react"
+"use client"
 import { Button } from "@/components/ui/button"
-
-const plans = [
-  {
-    name: "Beginner",
-    price: "₹199",
-    description: "Get started with Python & AI Development Basics",
-    features: ["Python & AI Development Basics", "No other extra perks"],
-  },
-  {
-    name: "Intermediate",
-    price: "₹499",
-    description: "Includes Beginner plan plus Machine Learning and Deep Learning Essentials",
-    features: [
-      "All Beginner plan features",
-      "Machine Learning and Deep Learning Essentials",
-      "Weekly Doubt Clarification Sessions",
-      "Access to Profile Building Sessions",
-    ],
-  },
-  {
-    name: "Advanced",
-    price: "₹799",
-    description: "Includes Intermediate plan plus NLP for AI Agents",
-    features: [
-      "All Intermediate plan features",
-      "NLP for AI Agents",
-      "Industry Expert Sessions",
-      "24/7 Chatbot Premium Support",
-      "9 AM to 5 PM Weekday WhatsApp Text Support",
-    ],
-  },
-  {
-    name: "Pro Developer",
-    price: "₹1299",
-    description: "Full access to all course content and exclusive perks",
-    features: [
-      "All Advanced plan features",
-      "Multi-Agent Systems and Deploying AI Agents",
-      "Money Making Strategy Sessions",
-      "AI Agents Discussion Sessions",
-      "Clarity through Call Support",
-      "Beta Access to All Our Products",
-      "Internship Opportunities",
-    ],
-  },
-]
+import { Check } from "lucide-react"
+import { plans } from "@/utils/pricingData"
 
 export default function Pricing() {
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-          Choose Your Learning Path
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {plans.map((plan, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
-            >
-              <div className="p-6">
-                <h3 className="text-xl sm:text-2xl font-bold mb-2">{plan.name}</h3>
-                <p className="text-3xl sm:text-4xl font-bold mb-4">{plan.price}</p>
-                <p className="text-sm sm:text-base text-gray-600 mb-6">{plan.description}</p>
-                <ul className="mb-6 space-y-2">
-                  {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start">
-                      <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                      <span className="text-xs sm:text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+    <section className="py-20 bg-white border border-gray-200 rounded-lg">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="flex flex-col items-center text-center mb-16">
+          <div className="inline-flex items-center gap-2 mb-6">
+            <span className="text-4xl">✨</span>
+            <h2 className="text-4xl font-bold">Choose Your Learning Journey</h2>
+          </div>
+          <p className="text-lg text-gray-600 mb-12 max-w-2xl">
+            Select the plan that best fits your learning goals. Each tier builds upon the previous, offering more
+            advanced content and exclusive perks.
+          </p>
+
+          {/* Pricing Cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
+            {plans.map((plan) => (
+              <div
+                key={plan.name}
+                className={`
+                  relative bg-white rounded-xl overflow-hidden transition-all duration-300
+                  hover:shadow-xl border-2
+                  ${plan.highlight ? "border-blue-500 shadow-lg" : "border-gray-200"}
+                `}
+              >
+                {plan.tag && (
+                  <div
+                    className={`absolute top-4 left-1/2 transform -translate-x-1/2 ${plan.highlight ? "bg-blue-500" : "bg-green-500"} text-white px-4 py-1 rounded-full text-sm`}
+                  >
+                    {plan.tag}
+                  </div>
+                )}
+                <div className="p-6 pt-12">
+                  <div className="flex justify-center mb-4">
+                    <plan.icon className={`w-12 h-12 ${plan.highlight ? "text-blue-500" : "text-gray-600"}`} />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
+                  <p className="text-sm text-gray-600 mb-4">{plan.description}</p>
+                  <div className="mb-6">
+                    <span className="text-4xl font-bold">{plan.price}</span>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-left mb-2">Included Sections:</h4>
+                      <ul className="text-left space-y-2">
+                        {plan.sections.map((section, index) => (
+                          <li key={index} className="flex items-start">
+                            <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                            <span className="text-sm">{section}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h4 className="font-semibold text-left mb-2">Additional Perks:</h4>
+                      <ul className="text-left space-y-2">
+                        {plan.perks.map((perk, index) => (
+                          <li key={index} className="flex items-start">
+                            <Check className="h-5 w-5 text-blue-500 mr-2 flex-shrink-0 mt-0.5" />
+                            <span className="text-sm">{perk}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-6 bg-gray-50 mt-6">
+                  <Button
+                    className={`w-full ${
+                      plan.highlight ? "bg-blue-500 hover:bg-blue-600" : "bg-gray-900 hover:bg-gray-800"
+                    }`}
+                  >
+                    Launching Soon
+                  </Button>
+                </div>
               </div>
-              <div className="p-6 bg-gray-50">
-                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm sm:text-base">
-                  Choose Plan
-                </Button>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
