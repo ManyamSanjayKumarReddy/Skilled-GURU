@@ -8,23 +8,19 @@ export default function Pricing() {
     <section className="py-20 bg-white border border-gray-200 rounded-lg">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="flex flex-col items-center text-center mb-16">
-          <div className="inline-flex items-center gap-2 mb-6">
-            <span className="text-4xl">✨</span>
-            <h2 className="text-4xl font-bold">Choose Your Learning Journey</h2>
-          </div>
+          <h2 className="text-4xl font-bold mb-6">Choose Your Learning Journey</h2>
           <p className="text-lg text-gray-600 mb-12 max-w-2xl">
             Select the plan that best fits your learning goals. Each tier builds upon the previous, offering more
             advanced content and exclusive perks.
           </p>
 
-          {/* Pricing Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
             {plans.map((plan) => (
               <div
                 key={plan.name}
                 className={`
                   relative bg-white rounded-xl overflow-hidden transition-all duration-300
-                  hover:shadow-xl border-2
+                  hover:shadow-xl border-2 flex flex-col
                   ${plan.highlight ? "border-blue-500 shadow-lg" : "border-gray-200"}
                 `}
               >
@@ -35,7 +31,7 @@ export default function Pricing() {
                     {plan.tag}
                   </div>
                 )}
-                <div className="p-6 pt-12">
+                <div className="p-6 pt-12 flex-grow">
                   <div className="flex justify-center mb-4">
                     <plan.icon className={`w-12 h-12 ${plan.highlight ? "text-blue-500" : "text-gray-600"}`} />
                   </div>
@@ -72,7 +68,7 @@ export default function Pricing() {
                   </div>
                 </div>
 
-                <div className="p-6 bg-gray-50 mt-6">
+                <div className="p-6 bg-gray-50 mt-auto">
                   <Button
                     className={`w-full ${
                       plan.highlight ? "bg-blue-500 hover:bg-blue-600" : "bg-gray-900 hover:bg-gray-800"

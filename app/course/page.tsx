@@ -11,7 +11,6 @@ import Image from "next/image"
 import AnnouncementBar from "../components/AnnouncementBar"
 import Pricing from "../components/Pricing"
 import { courseSections, benefits, courseDetails } from "@/utils/courseData"
-// import { courseSections,} from "@/utils/courseData"
 
 function CourseSection({ section, index }: { section: (typeof courseSections)[0]; index: number }) {
   const [isExpanded, setIsExpanded] = useState(false)

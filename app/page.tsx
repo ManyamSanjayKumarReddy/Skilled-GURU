@@ -7,6 +7,7 @@ import Founder from "./components/Founder"
 import CTA from "./components/CTA"
 import Footer from "./components/Footer"
 import AnnouncementBar from "./components/AnnouncementBar"
+import ContactUs from "./components/ContactUs"
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <LatestVideos />
         <UpcomingFeatures />
         <Founder />
+        <ContactUs />
         <CTA />
       </main>
       <Footer />
