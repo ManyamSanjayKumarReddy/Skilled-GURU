@@ -35,34 +35,32 @@ export default function Header() {
             />
             <span className="hidden sm:inline">Skilled GURU</span>
           </Link>
-          <div className="hidden md:flex items-center space-x-6">
-            <nav>
-              <ul className="flex space-x-6">
-                {navItems.map((item) => (
-                  <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      className={`text-gray-600 hover:text-blue-600 transition-colors ${
-                        !item.isLive ? "opacity-70 cursor-not-allowed" : ""
-                      } ${pathname === item.href ? "font-bold text-blue-600" : ""}`}
-                      aria-label={item.isLive ? item.name : `${item.name} (Coming Soon)`}
-                    >
-                      {item.name}
-                      {!item.isLive && <span className="ml-1 text-xs text-blue-600">(Soon)</span>}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
+          <nav className="hidden md:flex items-center space-x-6">
+            <ul className="flex space-x-6">
+              {navItems.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className={`text-gray-600 hover:text-blue-600 transition-colors ${
+                      !item.isLive ? "opacity-70 cursor-not-allowed" : ""
+                    } ${pathname === item.href ? "font-bold text-blue-600" : ""}`}
+                    aria-label={item.isLive ? item.name : `${item.name} (Coming Soon)`}
+                  >
+                    {item.name}
+                    {!item.isLive && <span className="ml-1 text-xs text-blue-600">(Soon)</span>}
+                  </Link>
+                </li>
+              ))}
+            </ul>
             <Button
               className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 flex items-center gap-2"
               onClick={() => window.open("https://youtube.com/@skilled_guru?si=Dnify5KYXAz3AcvX", "_blank")}
               aria-label="Subscribe to our YouTube channel"
             >
               <Youtube className="w-4 h-4" />
-              Subscribe
+              <span className="hidden sm:inline">Subscribe</span>
             </Button>
-          </div>
+          </nav>
           <button
             className="md:hidden text-gray-600 hover:text-blue-600 transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -91,7 +89,7 @@ export default function Header() {
               ))}
               <li>
                 <Button
-                  className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 flex items-center gap-2 w-full justify-center"
+                  className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 flex items-center justify-center gap-2"
                   onClick={() => window.open("https://youtube.com/@skilled_guru?si=Dnify5KYXAz3AcvX", "_blank")}
                   aria-label="Subscribe to our YouTube channel"
                 >

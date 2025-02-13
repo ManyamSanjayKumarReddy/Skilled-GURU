@@ -29,24 +29,24 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="py-20 bg-gradient-to-br from-white via-blue-50 to-purple-50">
+    <section id="features" className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-white via-blue-50 to-purple-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
           What Skilled GURU Offers
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-xl p-6 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2 border border-white border-opacity-30 flex flex-col items-center text-center"
+              className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-xl p-4 sm:p-6 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2 border border-white border-opacity-30 flex flex-col items-center text-center"
             >
               <div
-                className={`rounded-full w-16 h-16 flex items-center justify-center mb-4 bg-gradient-to-r ${feature.gradient}`}
+                className={`rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center mb-4 bg-gradient-to-r ${feature.gradient}`}
               >
-                <feature.icon className="w-8 h-8 text-white" />
+                <feature.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
+              <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-800">{feature.title}</h3>
+              <p className="text-sm sm:text-base text-gray-600">{feature.description}</p>
             </div>
           ))}
         </div>

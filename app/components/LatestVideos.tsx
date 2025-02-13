@@ -25,12 +25,12 @@ const videos = [
 
 export default function LatestVideos() {
   return (
-    <section id="videos" className="py-16 bg-gradient-to-br from-purple-50 via-pink-50 to-red-50">
+    <section id="videos" className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-purple-50 via-pink-50 to-red-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-10 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-10 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
           Latest Videos
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
           {videos.map((video) => (
             <Card
               key={video.id}
@@ -44,7 +44,7 @@ export default function LatestVideos() {
                 />
               </CardHeader>
               <CardContent className="p-4">
-                <CardTitle className="text-lg font-semibold line-clamp-2">{video.title}</CardTitle>
+                <CardTitle className="text-base sm:text-lg font-semibold line-clamp-2">{video.title}</CardTitle>
               </CardContent>
               <CardFooter className="p-4 pt-0">
                 <Button
@@ -62,7 +62,7 @@ export default function LatestVideos() {
           <Link href="/videos">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 px-8"
+              className="w-full sm:w-auto bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 px-6 sm:px-8"
             >
               View All Videos
             </Button>

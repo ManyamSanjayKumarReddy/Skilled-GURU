@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={inter.className}>
         {children}
-        <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-50">
+        <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-40">
           <Button
             className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-5 px-4 rounded-l-md transform -rotate-90 origin-right transition-all duration-300 hover:scale-105"
             onClick={() =>
