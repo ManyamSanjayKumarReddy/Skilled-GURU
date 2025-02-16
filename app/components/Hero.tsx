@@ -54,7 +54,7 @@ export default function Hero() {
             className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg p-6 rounded-xl shadow-lg mb-8 animate-fadeIn"
             style={{ animationDelay: "0.7s" }}
           >
-            <p className="text-xl sm:text-2xl font-semibold mb-4 text-white">Explore Our Agentic AI Course</p>
+            <p className="text-xl sm:text-2xl font-semibold mb-4 text-white">Explore Our new Course on Mastering Agentic AI </p>
             <Button
               size="lg"
               className="w-full sm:w-auto bg-white text-blue-600 hover:bg-blue-100 transition-colors duration-300"
