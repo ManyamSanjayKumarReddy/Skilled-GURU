@@ -1,6 +1,7 @@
 import Header from "./components/Header"
 import Hero from "./components/Hero"
 import Features from "./components/Features"
+import FlagshipProducts from "./components/FlagshipProducts"
 import LatestVideos from "./components/LatestVideos"
 import UpcomingFeatures from "./components/UpcomingFeatures"
 import Founder from "./components/Founder"
@@ -16,6 +17,7 @@ export default function Home() {
       <main>
         <Hero />
         <Features />
+        <FlagshipProducts />
         <LatestVideos />
         <UpcomingFeatures />
         <Founder />

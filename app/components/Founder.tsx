@@ -26,13 +26,16 @@ export default function Founder() {
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+    <section
+      id="founder"
+      className="py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+    >
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-          Meet Our Founder
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gradient">
+          The Journey Behind Skilled GURU
         </h2>
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white bg-opacity-40 backdrop-filter backdrop-blur-lg rounded-3xl p-8 shadow-xl transition-all duration-500 hover:shadow-2xl">
+          <div className="card group p-8">
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div
                 className="relative group"
@@ -54,30 +57,26 @@ export default function Founder() {
                     className="w-full h-full object-cover"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 opacity-0 group-hover:opacity-0 transition-opacity duration-30"></div>
+                  <div className="absolute inset-0 bg-gradient opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
                 </div>
                 <div
                   className={`
                   absolute inset-0 rounded-full
-                  bg-gradient-to-br from-blue-400 to-purple-400 opacity-0
+                  bg-gradient opacity-0
                   transition-all duration-500 blur-2xl
                   ${isHovered ? "opacity-20 scale-110" : ""}
                 `}
                 ></div>
               </div>
               <div className="flex-1 text-center md:text-left">
-                <h3 className="text-2xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-                  Manyam Sanjay Kumar Reddy
-                </h3>
-                <p className="text-lg text-gray-600 mb-4">Founder & Lead Instructor</p>
-                <div className="space-y-2 mb-6">
-                  <p className="text-gray-600">
-                    <span className="font-semibold">2+ years</span> of experience in Teaching Artificial Intelligence
-                  </p>
-                  <p className="text-gray-600">Currently working as Backend Developer & Scrum Master</p>
-                </div>
-                <p className="text-gray-600 italic mb-6 text-lg">
-                  "Empowering the next generation of tech leaders with practical AI knowledge and hands-on experience."
+                <h3 className="text-2xl font-bold mb-2 text-gradient">Manyam Sanjay Kumar Reddy</h3>
+                <p className="text-lg text-gray-600 dark:text-gray-300 mb-4">Founder & Lead Instructor</p>
+                <p className="text-gray-600 dark:text-gray-300 italic mb-6">
+                  "In my college days, learning advanced courses required anywhere from ₹30,000 to ₹2,00,000. Not every
+                  student, including myself, could afford such expensive training. I realized that knowledge should be
+                  accessible and affordable for everyone. This drove me to build Skilled GURU, a platform where students
+                  can learn cutting-edge technologies, gain hands-on experience, and use the best AI tools without
+                  financial barriers. My goal is simple: to empower students with real skills that lead to real jobs."
                 </p>
                 <div className="flex justify-center md:justify-start space-x-4">
                   {socialLinks.map((social, index) => (

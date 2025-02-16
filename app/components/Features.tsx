@@ -1,52 +1,46 @@
-import { Video, Users, Brain, Code } from "lucide-react"
+import { BookOpen, Briefcase, BotIcon as Robot, Video } from "lucide-react"
 
 const features = [
   {
+    icon: BookOpen,
+    title: "Courses & Training",
+    description: "Expert-led training in AI, Data Science, Web Development, and more",
+  },
+  {
+    icon: Robot,
+    title: "AI-Powered Mock Interviews",
+    description: "Real-world technical and behavioral assessments using AI",
+  },
+  {
+    icon: Briefcase,
+    title: "Placement Training",
+    description: "Structured programs to increase job placement rates for universities",
+  },
+  {
     icon: Video,
-    title: "Latest Tech Videos",
-    description: "Stay updated with our videos on AI and emerging technologies",
-    gradient: "from-red-400 to-pink-400",
-  },
-  {
-    icon: Brain,
-    title: "Personalized Learning",
-    description: "Tailored learning paths to accelerate your tech career",
-    gradient: "from-green-400 to-teal-400",
-  },
-  {
-    icon: Users,
-    title: "Expert Community",
-    description: "Connect with industry professionals and expand your network",
-    gradient: "from-blue-400 to-cyan-400",
-  },
-  {
-    icon: Code,
-    title: "AI Web and App Services",
-    description: "High-quality AI-powered web and app development services within no time",
-    gradient: "from-purple-400 to-indigo-400",
+    title: "Live Industry Sessions",
+    description: "Hands-on exposure to the latest technologies with industry leaders",
   },
 ]
 
 export default function Features() {
   return (
-    <section id="features" className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-white via-blue-50 to-purple-50">
+    <section
+      id="features"
+      className="py-20 bg-gradient-to-br from-white via-blue-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+    >
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-          What Skilled GURU Offers
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gradient">What Skilled GURU Offers</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <div
-              key={index}
-              className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-xl p-4 sm:p-6 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2 border border-white border-opacity-30 flex flex-col items-center text-center"
-            >
-              <div
-                className={`rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center mb-4 bg-gradient-to-r ${feature.gradient}`}
-              >
-                <feature.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+            <div key={index} className="card group">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 rounded-full bg-gradient flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <feature.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">{feature.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-800">{feature.title}</h3>
-              <p className="text-sm sm:text-base text-gray-600">{feature.description}</p>
             </div>
           ))}
         </div>
